@@ -1,0 +1,48 @@
+### Get /
+GET http://localhost:5000
+
+### POST (create user) 
+POST http://localhost:5000/auth/register
+Content-Type: application/json
+
+{ 
+  "username": "fareed@gmail.com", 
+  "password": "123123" 
+}
+
+### Login user
+POST http://localhost:5000/auth/login
+Content-Type: application/json
+
+{ 
+  "username": "fareed@gmail.com", 
+  "password": "123123" 
+}
+
+###  Fetch all todos GET /TODOS (Protected)
+GET http://localhost:5000/todos
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzM5OTY5ODc3LCJleHAiOjE3NDAwNTYyNzd9.NNug_RMxjmN6YVJ2blXyv6zWPTnKeawir7VqpXoY25o
+
+### Add a new todo POST /TODOS (Protected)
+POST http://localhost:5000/todos
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzM5OTY5ODc3LCJleHAiOjE3NDAwNTYyNzd9.NNug_RMxjmN6YVJ2blXyv6zWPTnKeawir7VqpXoY25o
+Content-Type: application/json
+
+{
+  "task": "Message Dr. Mrs"
+}
+
+### Update a todo PUT /TODOS/:ID (Protected)
+PUT http://localhost:5000/todos/2?page=4
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzM5OTY5ODc3LCJleHAiOjE3NDAwNTYyNzd9.NNug_RMxjmN6YVJ2blXyv6zWPTnKeawir7VqpXoY25o
+Content-Type: application/json
+
+{
+  "completed": 1
+}
+
+
+### Delete a todo DELETE /TODOS/:ID (Protected)
+DELETE  http://localhost:5000/todos/2
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzM5OTY5ODc3LCJleHAiOjE3NDAwNTYyNzd9.NNug_RMxjmN6YVJ2blXyv6zWPTnKeawir7VqpXoY25o
+
